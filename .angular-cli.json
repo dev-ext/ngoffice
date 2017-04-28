@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "../node_modules/npm-font-open-sans/fonts"
+        "../node_modules/npm-font-open-sans/fonts",
+        "./node_modules/font-awesome/fonts"
       ],
       "index": "index.html",
       "main": "main.ts",

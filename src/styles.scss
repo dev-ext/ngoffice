@@ -4,6 +4,7 @@
 // Dependecncy
 @import '../node_modules/npm-font-open-sans/open-sans.scss';
 @import '../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
 
 // Normalize callback
 @include normalize();
@@ -23,4 +24,7 @@ body {
 
 
 // Common Global Styles
+.padding {
+  padding: 15px;
+}
 

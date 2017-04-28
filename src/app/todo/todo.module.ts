@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TodoRoutes } from './todo.route';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { ListComponent } from './list/list.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { ListComponent } from './list/list.component';
   ],
   declarations: [
     TodoHomeComponent,
-    ListComponent
+    ListComponent,
+    SidebarComponent
   ],
   exports: [
     TodoHomeComponent

@@ -1,0 +1,25 @@
+:host {
+  background: blue;
+  width: 300px;
+}
+.todo-sidebar {
+  padding: 15px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+
+    a {
+      &:hover {
+        color: darken(#fff, 10%);
+      }
+    }
+  }
+}

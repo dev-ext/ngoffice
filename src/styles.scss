@@ -1,0 +1,23 @@
+$FontPathOpenSans: "../node_modules/npm-font-open-sans/fonts";
+$font-sans: 'Open Sans';
+
+@import '../node_modules/npm-font-open-sans/open-sans.scss';
+
+
+// Global Styles
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-sans;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+
+
+//

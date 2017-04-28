@@ -1,10 +1,11 @@
-$FontPathOpenSans: "../node_modules/npm-font-open-sans/fonts";
-$font-sans: 'Open Sans';
+// Variables
+@import './styles/_variables.scss';
 
+// Dependecncy
 @import '../node_modules/npm-font-open-sans/open-sans.scss';
 
 
-// Global Styles
+// Reset Styles
 
 body {
   padding: 0;
@@ -20,4 +21,5 @@ body {
 
 
 
-//
+// Common Global Styles
+

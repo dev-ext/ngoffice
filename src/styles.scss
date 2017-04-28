@@ -3,13 +3,14 @@
 
 // Dependecncy
 @import '../node_modules/npm-font-open-sans/open-sans.scss';
+@import '../node_modules/normalize-scss/sass/_normalize.scss';
 
+// Normalize callback
+@include normalize();
 
 // Reset Styles
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: $font-sans;
 }
 html {

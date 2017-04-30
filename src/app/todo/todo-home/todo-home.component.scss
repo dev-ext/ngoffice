@@ -2,16 +2,3 @@
   display: block;
   height: 100%;
 }
-
-.todo__wrapper {
-  display: flex;
-  height: calc( 100% - 57px );
-}
-.page__title {
-  background: #ddd;
-
-  h1 {
-    margin: 0;
-    padding: 10px;
-  }
-}

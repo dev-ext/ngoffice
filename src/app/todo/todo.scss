@@ -1,3 +1,21 @@
+/**
+** Global todo
+**/
+
+.todo__wrapper {
+  display: flex;
+  height: calc( 100% - 57px );
+}
+.page__title {
+  background: #ddd;
+
+  h1 {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+// List
 .todo-list {
   padding: 0;
   margin: 0;

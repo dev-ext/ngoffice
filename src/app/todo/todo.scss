@@ -8,17 +8,22 @@
   display: flex;
   height: calc( 100% - 57px );
 }
+
 .page__title {
   background: #ddd;
   display: flex;
   align-items: center;
   height: 50px;
-  padding:5px 15px;
+  padding: 5px 15px;
 
   h1 {
     margin: 0;
     font-size: 16px;
+    @media(min-width: map-get($layout, 'desktop' )) {
+      font-size: 25px;
+    }
   }
+
   &__icon-left {
     margin-right: 15px;
   }
@@ -55,7 +60,33 @@
 
   &__action {
     display: inline-block;
-    width: 100px;
     text-align: right;
+    position: relative;
+    @media(min-width: map-get($layout, 'desktop')) {
+      width: 100px;
+    }
+  }
+
+  &__action-more {
+    @media(min-width: map-get($layout, 'desktop')) {
+      display: none;
+    }
+  }
+
+  &__actionlist {
+    position: absolute;
+    top: 100%;
+    display: none;
+    width: 50px;
+    right: 0;
+
+    &.active {
+      display: block;
+    }
+    @media(min-width: map-get($layout, 'desktop')) {
+      position: relative;
+      display: block;
+      width: 100px;
+    }
   }
 }

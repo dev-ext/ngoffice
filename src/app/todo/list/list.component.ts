@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss', '../todo.scss']
 })
 export class ListComponent implements OnInit {
+  public listoptions;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  viewMore(event: any) {
+    event.stopPropagation();
+    this.listoptions = !this.listoptions;
   }
 
 }

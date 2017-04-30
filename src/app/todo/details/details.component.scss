@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.scss';
+
 /**
 * Todo Detils
 **/
@@ -15,7 +17,10 @@
   }
 
   &__description {
-    padding-right: 50px;
+    @media(min-width: map-get($layout, 'desktop' )) {
+      padding-right: 50px;
+    }
+    
   }
 
   &__info {

@@ -90,3 +90,34 @@
     }
   }
 }
+
+
+/**
+* Todo Details
+**/
+
+.todo-details {
+  &__title {
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    @media(min-width: map-get($layout, 'desktop' )) {
+      padding-right: 50px;
+    }
+    
+  }
+
+  &__info {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 10px 0;
+    }
+  }
+}

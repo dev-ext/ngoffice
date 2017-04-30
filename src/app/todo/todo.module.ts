@@ -7,6 +7,8 @@ import { ListComponent } from './list/list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { DetailsComponent } from './details/details.component';
+import { EditComponent } from './edit/edit.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { DetailsComponent } from './details/details.component';
     ListComponent,
     SidebarComponent,
     ArchiveComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditComponent,
+    PreviewComponent
   ],
   exports: [
     TodoHomeComponent

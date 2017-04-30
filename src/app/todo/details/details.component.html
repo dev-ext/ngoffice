@@ -1,16 +1,6 @@
-<div class="padding todo-details">
-  <div class="todo-details__title">
-    <h2>Title</h2>
-  </div>
-  <div class="todo-details__description">
-    <ul class="todo-details__info">
-      <li>
-        <strong>Due Date: </strong> 2/25/2017
-      </li>
-      <li>
-       <strong> Note </strong> <br>
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque, provident illo quisquam fugit ipsam, ex porro deleniti? Sit ipsam repellat totam accusantium incidunt esse repudiandae dolorem, alias tempora ut.
-      </li>
-    </ul>
-  </div>
+<div class="padding todo-details" (click)="editmode = !editmode">
+  <app-todo-edit 
+  *ngIf="!editmode"></app-todo-edit>
+  <app-todo-preview 
+    *ngIf="editmode"></app-todo-preview>
 </div>

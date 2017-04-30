@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-home.component.scss', '../todo.scss']
 })
 export class TodoHomeComponent implements OnInit {
+  public sidebarActive;
 
   constructor() { }
 

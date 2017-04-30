@@ -1,8 +1,9 @@
 <div class="page__title">
+  <button class="page__title__icon-left page__title__nav" (click)="sidebarActive = !sidebarActive"><i class="fa fa-bars"></i></button>
   <h1> Todo Application </h1>
 </div>
 <div class="todo__wrapper"> 
-  <app-sidebar></app-sidebar>
+  <app-sidebar [ngClass]="{'active': sidebarActive}"></app-sidebar>
   <router-outlet></router-outlet>
 </div>
 

@@ -1,3 +1,5 @@
+@import '../../styles/_variables.scss';
+
 /**
 ** Global todo
 **/
@@ -8,10 +10,27 @@
 }
 .page__title {
   background: #ddd;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding:5px 15px;
 
   h1 {
     margin: 0;
-    padding: 10px;
+    font-size: 16px;
+  }
+  &__icon-left {
+    margin-right: 15px;
+  }
+
+  &__icon-right {
+    margin-left: 15px;
+  }
+
+  &__nav {
+    @media(min-width: map-get($layout, 'desktop' )) {
+      display: none;
+    }
   }
 }
 

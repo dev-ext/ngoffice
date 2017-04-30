@@ -1,6 +1,22 @@
+@import '../../../styles/_variables.scss';
+
 :host {
   background: blue;
   width: 300px;
+  position: absolute;
+  left: -300px;
+  transition: left 0.3s ease;
+
+  &.active {
+    left: 0;
+    width: 100%;
+    height: calc( 100% - 70px )
+  }
+
+  @media(min-width: map-get($layout, 'desktop' )) {
+    left: 0;
+    position: relative;
+  }
 }
 .todo-sidebar {
   padding: 15px;

@@ -5,6 +5,7 @@ import { TodoRoutes } from './todo.route';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { ListComponent } from './list/list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     TodoHomeComponent,
     ListComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArchiveComponent
   ],
   exports: [
     TodoHomeComponent

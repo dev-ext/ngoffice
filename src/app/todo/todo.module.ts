@@ -9,6 +9,7 @@ import { ArchiveComponent } from './archive/archive.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { PreviewComponent } from './preview/preview.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { PreviewComponent } from './preview/preview.component';
     ArchiveComponent,
     DetailsComponent,
     EditComponent,
-    PreviewComponent
+    PreviewComponent,
+    CreateComponent
   ],
   exports: [
     TodoHomeComponent

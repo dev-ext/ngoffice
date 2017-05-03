@@ -39,6 +39,18 @@
   }
 }
 
+// menu 
+.todo {
+  &-action__list {
+    position: relative;
+  }
+  &-action__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
 // List
 .todo-list {
   padding: 0;
@@ -98,6 +110,10 @@
 
 .todo-details {
   &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
     h2 {
       font-size: 18px;
       font-weight: 700;

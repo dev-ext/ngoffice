@@ -2,18 +2,21 @@
 
 :host {
   background: blue;
-  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   position: absolute;
   left: -300px;
   transition: left 0.3s ease;
+  height: calc( 100% - 70px );
+  
 
   &.active {
     left: 0;
     width: 100%;
-    height: calc( 100% - 70px )
   }
 
   @media(min-width: map-get($layout, 'desktop' )) {
+    height: 100%;
     left: 0;
     position: relative;
   }

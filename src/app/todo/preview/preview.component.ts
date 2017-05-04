@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./preview.component.scss', '../todo.scss']
 })
 export class PreviewComponent implements OnInit {
+  public menuToggle;
 
   constructor() { }
 

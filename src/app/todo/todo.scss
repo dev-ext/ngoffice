@@ -45,9 +45,11 @@
     position: relative;
   }
   &-action__menu {
+    &.vertivcal {
     position: absolute;
     top: 100%;
     left: 0;
+    }
   }
 }
 

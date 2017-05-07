@@ -1,5 +1,5 @@
 <div class="padding todo-details">
-  <app-todo-edit *ngIf="!editmode"></app-todo-edit>
-  <app-todo-preview *ngIf="editmode"></app-todo-preview>
-  <app-todo-create *ngIf="createmode"></app-todo-create>
+  <app-todo-preview *ngIf="!mode"></app-todo-preview>
+  <app-todo-edit *ngIf="mode === 'edit'"></app-todo-edit>
+  <app-todo-create *ngIf="mode === 'add'"></app-todo-create>
 </div>

@@ -8,14 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
   public mode = true;
+  public params: any;
 
   constructor(
     private _acroute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this._acroute.queryParams.subscribe(params => {
-      this.mode = params.mode;
+    this._acroute.queryParams.subscribe(query => {
+      this.mode = query.mode;
+    });
+    this._acroute.params.subscribe(params => {
+      console.log(params);
     });
   }
 

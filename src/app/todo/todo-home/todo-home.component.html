@@ -1,7 +1,7 @@
 <div class="page__title">
   <button class="page__title__icon-left page__title__nav" (click)="sidebarActive = !sidebarActive"><i class="fa fa-bars"></i></button>
   <h1> Todo Application </h1>
-  <a routerLink="['untitled']" [queryParams]="{mode : 'add'}"><i class="fa fa-plus-circle"></i></a>
+  <a routerLink="untitled" [queryParams]="{mode : 'add'}"><i class="fa fa-plus-circle"></i></a>
 </div>
 <div class="todo__wrapper"> 
   <app-sidebar [ngClass]="{'active': sidebarActive}"></app-sidebar>

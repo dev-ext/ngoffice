@@ -1,11 +1,5 @@
 <div class="padding todo-details">
-<<<<<<< refs/remotes/origin/master
-  <app-todo-preview *ngIf="!mode"></app-todo-preview>
   <app-todo-edit *ngIf="mode === 'edit'"></app-todo-edit>
+  <app-todo-preview *ngIf="!mode"></app-todo-preview>
   <app-todo-create *ngIf="mode === 'add'"></app-todo-create>
-=======
-  <app-todo-edit *ngIf="mode === 'edit'"></app-todo-edit>
-  <app-todo-preview *ngIf="!mode"></app-todo-preview>
-  <app-todo-create *ngIf="mode === 'create'"></app-todo-create>
->>>>>>> details view navigation added
 </div>

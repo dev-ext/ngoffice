@@ -17,6 +17,9 @@ Run `ng build --aot=true --prod --env=prod` to build the project. The build arti
 ## Precache
 sw-precache --root=dist --config=sw-precache-config.js for generate service worker code
 
+## Deploy 
+firebase deploy --only hosting
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

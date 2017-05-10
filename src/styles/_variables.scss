@@ -5,9 +5,33 @@ $fa-font-path:        "../node_modules/font-awesome/fonts";
 $font-sans: 'Open Sans';
 
 
-// Colors
+// theme orange
+// $colors: (
+//   primary-color-dark:   #E64A19,
+//   primary-color:        #FF5722,
+//   primary-color-light:  #FFCCBC,
+//   primary-color-text:   #FFFFFF,
+//   accent-color:         #CDDC39,
+//   primary-text-color:   #212121,
+//   secondary-text-color: #757575,
+//   divider-color:        #BDBDBD
+// );
+
+// theme purple
+$colors: (
+  primary-color-dark:   #7B1FA2,
+  primary-color:        #9C27B0,
+  primary-color-light:  #E1BEE7,
+  primary-color-text:   #FFFFFF,
+  accent-color:         #7C4DFF,
+  primary-text-color:   #212121,
+  secondary-text-color: #757575,
+  divider-color:        #BDBDBD
+);
 
 // Layout
 $layout: (
   desktop: 992px
 );
+
+

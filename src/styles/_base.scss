@@ -1,0 +1,22 @@
+// Reset Styles
+
+body {
+  font-family: $font-sans;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+// Common Global Styles
+.padding {
+  padding: 15px;
+}
+

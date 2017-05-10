@@ -1,7 +1,6 @@
 @import '../../../styles/_variables.scss';
 
 :host {
-  background: blue;
   min-width: 250px;
   max-width: 250px;
   position: absolute;
@@ -9,6 +8,8 @@
   transition: left 0.3s ease;
   height: calc( 100% - 70px );
   z-index: 100;
+  background: map-get($colors, 'primary-color');
+  color:  map-get($colors, 'primary-color-text');
   
 
   &.active {

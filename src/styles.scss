@@ -9,22 +9,4 @@
 // Normalize callback
 @include normalize();
 
-// Reset Styles
-
-body {
-  font-family: $font-sans;
-}
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
-
-
-
-// Common Global Styles
-.padding {
-  padding: 15px;
-}
-
+@import './styles/_styles.scss';

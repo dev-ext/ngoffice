@@ -10,6 +10,8 @@ import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { PreviewComponent } from './preview/preview.component';
 import { CreateComponent } from './create/create.component';
+import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 
 @NgModule({
   imports: [
@@ -24,7 +26,9 @@ import { CreateComponent } from './create/create.component';
     DetailsComponent,
     EditComponent,
     PreviewComponent,
-    CreateComponent
+    CreateComponent,
+    TodoFormComponent,
+    TodoListItemComponent
   ],
   exports: [
     TodoHomeComponent

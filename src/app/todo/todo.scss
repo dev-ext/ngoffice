@@ -10,11 +10,13 @@
 }
 
 .page__title {
-  background: #ddd;
   display: flex;
   align-items: center;
   height: 50px;
   padding: 5px 15px;
+  justify-content: space-between;
+  background: map-get($colors, 'primary-color-dark');
+  color: map-get($colors, 'primary-color-text');
 
   h1 {
     margin: 0;
@@ -59,12 +61,13 @@
   margin: 0;
   list-style: none;
 
-  li {
+  /deep/ li {
     margin: 0;
     padding: 0;
     font-size: 16px;
     display: table;
     width: 100%;
+    
   }
 
   &__content {
@@ -93,6 +96,10 @@
     display: none;
     width: 50px;
     right: 0;
+
+    button {
+      padding: 4px;
+    }
 
     &.active {
       display: block;

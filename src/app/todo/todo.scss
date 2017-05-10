@@ -79,6 +79,9 @@
     display: inline-block;
     text-align: right;
     position: relative;
+    button {
+      padding: 4px;
+    }
     @media(min-width: map-get($layout, 'desktop')) {
       width: 100px;
     }
@@ -97,9 +100,7 @@
     width: 50px;
     right: 0;
 
-    button {
-      padding: 4px;
-    }
+
 
     &.active {
       display: block;

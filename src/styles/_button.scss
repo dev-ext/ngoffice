@@ -1,7 +1,12 @@
-.ngf-btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: map-get($colors, 'accent-color');
-  color:  map-get($colors, 'primary-color-text');
-  border: 1px solid map-get($colors, 'accent-color')
+.ngf-btn {
+  &-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: map-get($colors, 'accent-color');
+    color:  map-get($colors, 'primary-color-text');
+    border: 1px solid map-get($colors, 'accent-color')
+  }
+  &-min {
+    padding: 4px;
+  }
 }

@@ -1,9 +1,13 @@
 <div class="todo-details__title">
   <h2>Title</h2>
-  <div class="todo-action__list">
-      <button (click)="menuToggle =! menuToggle"><i class="fa fa-ellipsis-v"> </i></button>
-      <div class="todo-action__menu vertical" *ngIf="menuToggle">
-         <button><i class="fa fa-pencil" routerLink="/todo/12" [queryParams]="{mode : 'edit'}"></i></button>
+  <div class="todo-list__action">
+      <button (click)="menuToggle =! menuToggle" class="ngf-btn-primary">
+        <i class="fa fa-ellipsis-v"> </i>
+      </button>
+      <div class="todo-list__actionlist" *ngIf="menuToggle" [ngClass]="{'active': menuToggle}">
+         <button class="ngf-btn-primary">
+           <i class="fa fa-pencil" routerLink="/todo/12" [queryParams]="{mode : 'edit'}"></i>
+         </button>
       </div>
   </div>
 </div>

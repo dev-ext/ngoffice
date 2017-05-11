@@ -6,7 +6,7 @@
   position: absolute;
   left: -250px;
   transition: left 0.3s ease;
-  height: calc( 100% - 70px );
+  height: calc( 100% - 50px );
   z-index: 100;
   background: map-get($colors, 'primary-color');
   color:  map-get($colors, 'primary-color-text');

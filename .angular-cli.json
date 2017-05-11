@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
+        "favicons",
         "../node_modules/npm-font-open-sans/fonts",
         "./node_modules/font-awesome/fonts"
       ],

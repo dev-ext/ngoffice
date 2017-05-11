@@ -1,0 +1,50 @@
+.layout-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+// Full height sidebar
+.sidebar-wrapper {
+  min-width: 250px;
+  max-width: 250px;
+  position: absolute;
+  padding: 15px;
+  left: -250px;
+  transition: left 0.3s ease;
+  height: 100%;
+  z-index: 100;
+  background: map-get($colors, 'primary-color');
+  color:  map-get($colors, 'primary-color-text');
+  &.active {
+    left: 0;
+    width: 100%;
+  }
+   @media(min-width: map-get($layout, 'desktop' )) {
+    height: 100%;
+    left: 0;
+    position: relative;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+
+    a {
+      &:hover {
+        color: darken(#fff, 10%);
+      }
+    }
+  }
+}
+
+// Main content 
+.main-content {
+  padding: 0 15px;
+}

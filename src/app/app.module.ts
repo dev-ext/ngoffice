@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+
+import { UikitModule } from './uikit/uikit.module';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -18,8 +19,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
+    UikitModule,
     AppRoutes
   ],
   providers: [{

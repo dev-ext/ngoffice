@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -27,6 +27,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     provide: APP_BASE_HREF,
     useValue : '/'
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

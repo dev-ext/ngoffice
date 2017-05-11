@@ -1,6 +1,10 @@
 .layout-wrapper {
   display: flex;
   height: 100%;
+
+  &.has-page-title {
+    height: calc(100% - 50px);
+  }
 }
 
 // Full height sidebar

@@ -7,7 +7,13 @@
     <i class="fa fa-plus-circle" routerLink="untitled" [queryParams]="{mode : 'add'}"></i>
    </button>
 </div>
-<div class="todo__wrapper">
-  <app-sidebar [ngClass]="{'active': sidebarActive}" (onCloseSidebar)="sidebarActive = !sidebarActive"></app-sidebar>
-  <router-outlet></router-outlet>
+
+<div class="layout-wrapper has-page-title">
+  <div class="sidebar-wrapper" [ngClass]="{'active': sidebarActive}">
+    <app-sidebar (onCloseSidebar)="sidebarActive = !sidebarActive"></app-sidebar>
+  </div>
+
+  <section class="main-content">
+   <router-outlet></router-outlet>
+  </section>
 </div>

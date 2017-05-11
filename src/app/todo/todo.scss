@@ -70,14 +70,10 @@
     display: none;
     width: 50px;
     right: 0;
-
-
-
     &.active {
       display: block;
     }
     @media(min-width: map-get($layout, 'desktop')) {
-      position: relative;
       display: block;
       width: 100px;
     }

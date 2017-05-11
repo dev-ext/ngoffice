@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-todo-preview',
+  selector: 'ngf-todo-preview',
   templateUrl: './preview.component.html',
   styleUrls: ['../todo.scss']
 })

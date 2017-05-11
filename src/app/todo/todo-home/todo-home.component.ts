@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-todo-home',
+  selector: 'ngf-todo-home',
   templateUrl: './todo-home.component.html',
   styleUrls: ['./todo-home.component.scss', '../todo.scss']
 })

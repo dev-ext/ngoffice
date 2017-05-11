@@ -10,10 +10,11 @@
 
 <div class="layout-wrapper has-page-title">
   <div class="sidebar-wrapper" [ngClass]="{'active': sidebarActive}">
-    <app-sidebar (onCloseSidebar)="sidebarActive = !sidebarActive"></app-sidebar>
+    <ngf-todo-sidebar (onCloseSidebar)="sidebarActive =!sidebarActive"></ngf-todo-sidebar>
   </div>
 
   <section class="main-content">
    <router-outlet></router-outlet>
   </section>
 </div>
+

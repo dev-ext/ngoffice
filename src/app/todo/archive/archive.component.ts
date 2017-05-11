@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-todo-archive',
+  selector: 'ngf-todo-archive',
   templateUrl: './archive.component.html',
   styleUrls: ['./archive.component.scss', '../todo.scss']
 })

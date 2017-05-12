@@ -1,8 +1,11 @@
 <div class="layout-wrapper">
   <div class="sidebar-wrapper">
-    <ngf-sidebar>
+    <ngf-sidebar (onSignOut)="signOut()" [authstate]="authstate">
       <sidebar-content>
-        Sidebar
+        <ul>
+          <li *ngIf="!authstate"><a routerLink="/auth">SignIn</a></li>
+          <li *ngIf="authstate"><a (click)="signOut()">SignOut</a></li>
+        </ul>
       </sidebar-content>
     </ngf-sidebar>
   </div>

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AuthRoutes } from './auth.routing';
 
 import { SharedModule } from './../shared/shared.module';
+import { AuthGuard } from '../services/auth.guard';
 
 import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';
@@ -11,9 +11,11 @@ import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     AuthRoutes,
     SharedModule
+  ],
+  providers: [
+    AuthGuard
   ],
   declarations: [
     SignupComponent,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'ngf-signup',
@@ -11,8 +12,9 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
 
   constructor(
-   private _firebaseAuth: AngularFireAuth,
    public fb: FormBuilder,
+   private _auth: AuthService,
+   private _router: Router
   ) { }
 
   ngOnInit() {
@@ -24,26 +26,15 @@ export class SignupComponent implements OnInit {
 
   registerwithEmail(values, valid) {
     if ( valid ) {
-     this.registeruserWithEmail(values);
+     this._auth.registeruserWithEmail(values)
+      .then(() => { this.postSignup() })
     }else {
       console.log('validation error');
     }
 
   }
 
-  registeruserWithEmail(values) {
-     this._firebaseAuth.auth.createUserWithEmailAndPassword(values.email, values.password)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(error => {
-          console.log(error);
-      });
-  }
-
-
-  register() {
-    console.log('register');
-  }
-
+ postSignup() {
+  this._router.navigate(['/auth']);
+ }
 }

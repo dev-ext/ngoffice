@@ -1,0 +1,24 @@
+@import '../../../styles/_variables';
+:host {
+  display: flex;
+  min-height: 100%;
+  flex-flow: column;
+  color: #fff;
+  background: map-get($colors, 'primary-color-dark' );
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: map-get($colors , 'primary-color-light' );
+
+    &:hover {
+      color: lighten(map-get($colors , 'primary-color-light' ), 10%);
+    }
+  }
+}
+.login {
+  &__wrap {
+    max-width: 400px;
+  }
+  
+}

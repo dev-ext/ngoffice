@@ -1,3 +1,25 @@
-<p>
-  signup works!
-</p>
+<div class="signup__wrap">
+  <div class="signup__head">
+    <h2>Signup to mange your awesome office</h2>
+    <p>Already signup? <a routerLink="/auth/login">login</a></p>
+  </div>
+  <div class="signup__form">
+    <form>
+      <div class="ngf-form__group">
+        <input type="text" placeholder="Username"  class="ngf-form__control">
+      </div>
+      <div class="ngf-form__group">
+        <input type="text" placeholder="Password" class="ngf-form__control">
+      </div>
+      <div class="ngf-form__group">
+        <button class="ngf-btn-primary ngf-btn--block" routerLink="/auth">Signup</button>
+      </div>
+    </form>
+  </div>
+  <div class="signup__footer">
+    <h4>Signup With</h4>
+    <a (click)="register()" class="provider"> <i class="fa fa-github"></i></a>
+    <a (click)="register()" class="provider"> <i class="fa fa-google-plus"></i></a>
+    <a (click)="register()" class="provider"> <i class="fa fa-facebook"></i></a>
+  </div>
+</div>

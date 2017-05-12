@@ -1,0 +1,41 @@
+@import '../../../styles/_variables';
+:host {
+  display: flex;
+  min-height: 100%;
+  flex-flow: column;
+  color: #fff;
+  background: map-get($colors, 'primary-color-dark' );
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: map-get($colors , 'primary-color-light' );
+
+    &:hover {
+      color: lighten(map-get($colors , 'primary-color-light' ), 10%);
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+.signup {
+  &__wrap {
+    max-width: 400px;
+  }
+
+  &__footer {
+    text-align: center;
+    
+    .provider {
+      display: inline-block;
+      padding: 10px;
+      background: map-get($colors , 'primary-color-light' );
+      color: map-get($colors , 'accent-color' );
+      min-width: 45px;
+      text-align: center;
+    }
+  }
+  
+}

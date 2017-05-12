@@ -1,12 +1,17 @@
+@import '../styles//_variables';
+
 .ngf-form {
   &__control {
     width: 100%;
     display: block;
     min-height: 30px;
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 2px lighten(#ddd, 10%);
+    border: 1px solid map-get($colors , 'primary-color-light');
+    box-shadow: 6px 6px 12px map-get($colors , 'primary-color-light') inset;
     margin-top: 10px;
     padding: 0 15px;
+    @media (min-width: map-get($grid-breakpoints, 'desktop' )) {
+      min-height: 42px;
+    }
   }
   &--inline {
       display: inline-block;

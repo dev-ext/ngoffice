@@ -5,5 +5,13 @@
 
 export const environment = {
   production: false,
-  debug: true
+  debug: true,
+  firebase : {
+    apiKey: 'AIzaSyCPJc2HcHKjflMgUZPgEF_Xz-5bQjrk7u8',
+    authDomain: 'ng-office-ca7f8.firebaseapp.com',
+    databaseURL: 'https://ng-office-ca7f8.firebaseio.com',
+    projectId: 'ng-office-ca7f8',
+    storageBucket: 'ng-office-ca7f8.appspot.com',
+    messagingSenderId: '805140463325'
+  }
 };

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutes } from './auth.routing';
+
+import { SharedModule } from './../shared/shared.module';
 
 import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';
@@ -12,9 +13,13 @@ import { ResetComponent } from './reset/reset.component';
   imports: [
     CommonModule,
     AuthRoutes,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule
   ],
-  declarations: [ SignupComponent, AuthComponent, LoginComponent, ResetComponent ]
+  declarations: [
+    SignupComponent,
+    AuthComponent,
+    LoginComponent,
+    ResetComponent
+   ]
 })
 export class AuthModule { }

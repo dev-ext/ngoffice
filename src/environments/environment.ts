@@ -7,11 +7,11 @@ export const environment = {
   production: false,
   debug: true,
   firebase : {
-    apiKey: 'AIzaSyCPJc2HcHKjflMgUZPgEF_Xz-5bQjrk7u8',
-    authDomain: 'ng-office-ca7f8.firebaseapp.com',
-    databaseURL: 'https://ng-office-ca7f8.firebaseio.com',
-    projectId: 'ng-office-ca7f8',
-    storageBucket: 'ng-office-ca7f8.appspot.com',
-    messagingSenderId: '805140463325'
+    apiKey: 'AIzaSyAu3xKjgih0uVHW5iWpbjM_RN20Z9KcxGE',
+    authDomain: 'ng-office.firebaseapp.com',
+    databaseURL: 'https://ng-office.firebaseio.com',
+    projectId: 'ng-office',
+    storageBucket: 'ng-office.appspot.com',
+    messagingSenderId: '212487521495'
   }
 };

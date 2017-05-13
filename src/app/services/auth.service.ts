@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 import { environment } from '../../environments/environment';
-interface USER {
-  email: string,
-  password: string
-};
+
 @Injectable()
 export class AuthService {
   authenticated: Observable<boolean>;
@@ -28,6 +26,18 @@ export class AuthService {
           console.log(error);
         }
       });
+  }
+
+  loginWithEmail(values) {
+    return new Promise((resolve, reject) => {
+      this._auth.auth.signInWithEmailAndPassword(values.email, values.password)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(error => {
+        reject(error);
+      });
+    });
   }
 
   signOut(): void {

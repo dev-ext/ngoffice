@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
   }
 
   signOut() {
-    console.log('test');
     this._auth.signOut();
   }
 

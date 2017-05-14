@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  message: string;
 
 
   constructor(
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
         .then((res) => {
           this.postSignin();
         }).catch((error) => {
-          console.log(error);
+          this.message = error.message
         });
     }
   }
@@ -41,5 +42,6 @@ export class LoginComponent implements OnInit {
   postSignin() {
     this._router.navigate(['/']);
   }
+
 
 }

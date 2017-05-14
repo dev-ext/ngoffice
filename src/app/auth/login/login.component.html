@@ -16,6 +16,9 @@
       </div>
     </form>
   </div>
+  <div class="ngf-message error" *ngIf="message">
+    {{message}}
+  </div>
   <div class="login__footer">
     <p>Forget Password? <a routerLink="/auth/reset">Reset</a></p>
   </div>

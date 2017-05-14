@@ -1,0 +1,11 @@
+@import './_variables.scss';
+
+.ngf-message {
+  padding: 10px;
+  font-size: 14px;
+
+  &.error {
+    background-color: map-get($colors-msg,  'error');
+    color: map-get($colors-msg,  'text');
+  }
+}

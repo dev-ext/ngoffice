@@ -23,7 +23,8 @@ import { AuthService } from '../services/auth.service';
   exports: [
     UikitModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ]
 })
 export class SharedModule { }

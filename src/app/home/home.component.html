@@ -14,7 +14,7 @@
     <h1>All Modules</h1>
     <ul>
       <li><a routerLink="/todo">Todo</a></li>
-      <li><a routerLink="/auth">Auth</a></li>
+      <li *ngIf="!authstate"><a routerLink="/auth">Auth</a></li>
     </ul>
   </section>
 </div>

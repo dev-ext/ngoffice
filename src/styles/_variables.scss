@@ -29,6 +29,15 @@ $colors: (
   divider-color:        #BDBDBD
 );
 
+// message 
+$colors-msg: (
+  error: #E82C0C,
+  text: #FFFFFF,
+  text-dark: #044745,
+  success: #86FF13,
+  info: #0DFFF6
+);
+
 // Layout
 $layout: (
   desktop: 992px

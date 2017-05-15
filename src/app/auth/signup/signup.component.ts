@@ -10,6 +10,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
+  message: string;
+
 
   constructor(
    public fb: FormBuilder,
@@ -28,10 +30,12 @@ export class SignupComponent implements OnInit {
     if ( valid ) {
      this._auth.registeruserWithEmail(values)
       .then(() => { this.postSignup() })
+      .catch(error => {
+        this.message = error.message;
+      });
     }else {
       console.log('validation error');
     }
-
   }
 
  postSignup() {

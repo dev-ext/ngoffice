@@ -14,6 +14,9 @@
       <div class="ngf-form__group">
         <button class="ngf-btn-primary ngf-btn--block">Signup</button>
       </div>
+      <div class="ngf-message error" *ngIf="message">
+        {{message}}
+      </div>
     </form>
   </div>
   <div class="signup__footer">

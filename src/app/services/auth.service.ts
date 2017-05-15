@@ -19,13 +19,16 @@ export class AuthService {
   }
 
   registeruserWithEmail(values) {
-    return this._auth.auth
+    return new Promise((resolve, reject) => {
+      this._auth.auth
       .createUserWithEmailAndPassword(values.email, values.password)
+      .then(res => {
+        resolve(res);
+      })
       .catch(error => {
-        if (environment.debug) {
-          console.log(error);
-        }
+        reject(error);
       });
+    });
   }
 
   loginWithEmail(values) {

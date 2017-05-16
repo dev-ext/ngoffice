@@ -4,13 +4,16 @@
     <p>Go back to login? <a routerLink="/auth">Login</a></p>
   </div>
   <div class="login__form">
-    <form>
+    <form [formGroup]="resetForm" (ngSubmit)="resetPassword(resetForm.value, resetForm.valid)">
       <div class="ngf-form__group">
-        <input type="text" placeholder="Password" class="ngf-form__control">
+        <input type="text" placeholder="Password" class="ngf-form__control" formControlName="email">
       </div>
       <div class="ngf-form__group">
-        <button class="ngf-btn-primary ngf-btn--block" routerLink="/">Reset</button>
+        <button class="ngf-btn-primary ngf-btn--block">Reset</button>
       </div>
     </form>
+    <div class="ngf-message error" *ngIf="message">
+      {{message}}
+    </div>
   </div>
 </div>

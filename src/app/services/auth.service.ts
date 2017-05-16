@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/fromPromise';
 
 import { environment } from '../../environments/environment';
 
@@ -29,6 +30,11 @@ export class AuthService {
         reject(error);
       });
     });
+  }
+
+  sendPasswordResetEmail(email: string) {
+    const thenable = this._auth.auth.sendPasswordResetEmail(email);
+    return Observable.fromPromise(thenable);
   }
 
   loginWithEmail(values) {

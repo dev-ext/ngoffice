@@ -52,7 +52,7 @@ export class SocialLoginComponent implements OnInit {
     if (environment.debug) {
       console.log(values);
     }
-    this._router.navigate(['/auth']);
+    this._router.navigate(['/']);
   }
 
   private _signUpError(error) {

@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
+import { SocialLoginComponent } from './social-login/social-login.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { ResetComponent } from './reset/reset.component';
     SignupComponent,
     AuthComponent,
     LoginComponent,
-    ResetComponent
+    ResetComponent,
+    SocialLoginComponent
    ]
 })
 export class AuthModule { }

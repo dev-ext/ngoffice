@@ -27,15 +27,6 @@
 
   &__footer {
     text-align: center;
-    
-    .provider {
-      display: inline-block;
-      padding: 10px;
-      background: map-get($colors , 'primary-color-light' );
-      color: map-get($colors , 'accent-color' );
-      min-width: 45px;
-      text-align: center;
-    }
   }
   
 }

@@ -39,36 +39,6 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  loginWithGithub() {
-    this._auth.loginWithGithub()
-      .subscribe(res => {
-        this._postSignup(res);
-      },
-      error => {
-        this._signUpError(error);
-      });
-  }
-
-  loginWithGoogle() {
-    this._auth.loginWithGoogle()
-      .subscribe(res => {
-        this._postSignup(res);
-      },
-      error => {
-        this._signUpError(error);
-      });
-  }
-
-  loginWithFacebook() {
-    this._auth.loginWithFacebook()
-      .subscribe(res => {
-        this._postSignup(res);
-      },
-      error => {
-        this._signUpError(error);
-      });
-  }
-
   private _postSignup(values) {
     if (environment.debug) {
       console.log(values);

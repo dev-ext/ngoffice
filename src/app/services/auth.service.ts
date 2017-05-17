@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/fromPromise';
 
@@ -22,13 +22,13 @@ export class AuthService {
   registeruserWithEmail(values) {
     return new Promise((resolve, reject) => {
       this._auth.auth
-      .createUserWithEmailAndPassword(values.email, values.password)
-      .then(res => {
-        resolve(res);
-      })
-      .catch(error => {
-        reject(error);
-      });
+        .createUserWithEmailAndPassword(values.email, values.password)
+        .then(res => {
+          resolve(res);
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
   }
 
@@ -40,13 +40,31 @@ export class AuthService {
   loginWithEmail(values) {
     return new Promise((resolve, reject) => {
       this._auth.auth.signInWithEmailAndPassword(values.email, values.password)
-      .then(res => {
-        resolve(res);
-      })
-      .catch(error => {
-        reject(error);
-      });
+        .then(res => {
+          resolve(res);
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
+  }
+
+  private _signIn(provider: firebase.auth.AuthProvider): Observable<any> {
+    const thenable = this._auth.auth.
+      signInWithPopup(provider);
+    return Observable.fromPromise(thenable);
+  }
+
+  loginWithGithub(): Observable<any> {
+    return this._signIn(new firebase.auth.GithubAuthProvider());
+  }
+
+  loginWithGoogle(): Observable<any> {
+    return this._signIn(new firebase.auth.GoogleAuthProvider());
+  }
+
+  loginWithFacebook(): Observable<any> {
+    return this._signIn(new firebase.auth.FacebookAuthProvider());
   }
 
   signOut(): void {

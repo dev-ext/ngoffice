@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'ngf-signup',
@@ -14,9 +15,9 @@ export class SignupComponent implements OnInit {
 
 
   constructor(
-   public fb: FormBuilder,
-   private _auth: AuthService,
-   private _router: Router
+    public fb: FormBuilder,
+    private _auth: AuthService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -27,18 +28,58 @@ export class SignupComponent implements OnInit {
   }
 
   registerwithEmail(values, valid) {
-    if ( valid ) {
-     this._auth.registeruserWithEmail(values)
-      .then(() => { this.postSignup() })
-      .catch(error => {
-        this.message = error.message;
-      });
-    }else {
+    if (valid) {
+      this._auth.registeruserWithEmail(values)
+        .then((res) => { this._postSignup(res) })
+        .catch(error => {
+          this._signUpError(error);
+        });
+    } else {
       console.log('validation error');
     }
   }
 
- postSignup() {
-  this._router.navigate(['/auth']);
- }
+  loginWithGithub() {
+    this._auth.loginWithGithub()
+      .subscribe(res => {
+        this._postSignup(res);
+      },
+      error => {
+        this._signUpError(error);
+      });
+  }
+
+  loginWithGoogle() {
+    this._auth.loginWithGoogle()
+      .subscribe(res => {
+        this._postSignup(res);
+      },
+      error => {
+        this._signUpError(error);
+      });
+  }
+
+  loginWithFacebook() {
+    this._auth.loginWithFacebook()
+      .subscribe(res => {
+        this._postSignup(res);
+      },
+      error => {
+        this._signUpError(error);
+      });
+  }
+
+  private _postSignup(values) {
+    if (environment.debug) {
+      console.log(values);
+    }
+    this._router.navigate(['/auth']);
+  }
+
+  private _signUpError(error) {
+    if (environment.debug) {
+      console.log(error);
+    }
+    this.message = error.message;
+  }
 }

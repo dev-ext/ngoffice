@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ngf-todo-list-item',
@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../todo/todo.scss']
 })
 export class TodoListItemComponent implements OnInit {
+
+  @Input() task: any;
   public listoptions;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 <div class="list__wrapper padding" (click)="listoptions = !listoptions">
-  <ul class="todo-list">
-    <ngf-todo-list-item></ngf-todo-list-item>
-  </ul>
+  <div class="todo-list">
+    <ngf-todo-list-item [task]="task" *ngFor="let task of todolist"></ngf-todo-list-item>
+  </div>
 </div>

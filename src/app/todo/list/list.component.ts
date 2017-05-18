@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'ngf-todo-list',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 public listoptions;
+  public todolist: any;
 
-  constructor() { }
+  constructor(
+    private _taskservice: TaskService
+  ) { }
 
   ngOnInit() {
+   this._taskservice.getAll().subscribe(tasks => {
+     this.todolist = tasks;
+   })
   }
 
 }

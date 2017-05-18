@@ -31,9 +31,9 @@
   margin: 0;
   list-style: none;
 
-  /deep/ li {
+  /deep/ .item {
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
     font-size: 16px;
     display: table;
     width: 100%;

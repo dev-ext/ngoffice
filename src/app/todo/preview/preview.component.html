@@ -6,16 +6,13 @@
       </button>
       <div class="todo-list__actionlist" *ngIf="menuToggle" [ngClass]="{'active': menuToggle}">
          <button class="ngf-btn-primary">
-           <i class="fa fa-pencil" routerLink="/todo/12" [queryParams]="{mode : 'edit'}"></i>
+           <i class="fa fa-pencil" routerLink="/todo/{{ (task | async)?.$key }}" [queryParams]="{mode : 'edit'}"></i>
          </button>
       </div>
   </div>
 </div>
 <div class="todo-details__description">
   <ul class="todo-details__info">
-    <li>
-      <strong>Due Date: </strong> 2/25/2017
-    </li>
     <li>
       <strong> Note </strong> <br> 
       {{ (task | async)?.info }}

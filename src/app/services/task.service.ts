@@ -25,6 +25,7 @@ export class TaskService {
   }
 
   remove(key) {
+    console.log(key)
     return this._tasks.remove(key);
   }
 

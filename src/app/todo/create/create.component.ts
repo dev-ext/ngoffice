@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import shortid from 'shortid';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['../todo.scss']
 })
 export class CreateComponent implements OnInit {
-  id: string = shortid.generate();
+  
 
   constructor(
     private _router: Router
@@ -18,7 +17,6 @@ export class CreateComponent implements OnInit {
   }
 
   redirect(event) {
-    console.log(event)
     this._router.navigate(['todo', event])
   }
 

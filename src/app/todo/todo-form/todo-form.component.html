@@ -5,15 +5,12 @@
       <input type="text" class="ngf-form__control" formControlName="title">
     </div>
     <div class="ngf-form__group">
-      <label>Date</label>
-      <input type="date" class="ngf-form__control" placeholder="Add Date">
-    </div>
-    <div class="ngf-form__group">
       <label>Info</label>
       <textarea  rows="10" class="ngf-form__control" formControlName="info"></textarea>
     </div>
     <div class="ngf-form__group">
-      <button class="ngf-btn-primary">Create</button>
+      <button class="ngf-btn-primary" *ngIf="mode === 'add'">Create</button>
+      <button class="ngf-btn-primary" *ngIf="mode === 'edit'">Update</button>      
     </div>
   </form>
 </div>

@@ -9,9 +9,9 @@
         </button>
       </div>
       <div class="todo-list__actionlist" [ngClass]="{'active': listoptions}">
-        <button  class="ngf-btn-primary" routerLink="../12"><i class="fa fa-pencil"></i></button>
+        <button  class="ngf-btn-primary" routerLink="../{{task?.$key}}"><i class="fa fa-pencil"></i></button>
         <button class="ngf-btn-primary"><i class="fa fa-check"></i></button>
-        <button class="ngf-btn-primary"><i class="fa fa-trash-o"></i></button>
+        <button class="ngf-btn-primary" (click)="delete(task)"><i class="fa fa-trash-o"></i></button>
       </div>
     </div>
 </div>

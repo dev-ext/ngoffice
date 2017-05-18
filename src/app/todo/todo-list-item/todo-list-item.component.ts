@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'ngf-todo-list-item',
@@ -8,9 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TodoListItemComponent implements OnInit {
 
   @Input() task: any;
+  @Output() onDelete: EventEmitter<any> = new EventEmitter();
+
   public listoptions;
 
-  constructor() { }
+  constructor(
+    private _taskservice: TaskService
+  ) { }
 
   ngOnInit() {
   }
@@ -19,5 +24,15 @@ export class TodoListItemComponent implements OnInit {
     event.stopPropagation();
     this.listoptions = !this.listoptions;
   }
+
+   delete(task) {
+     this._taskservice.remove(task.$key)
+       .then(res => {
+         this.onDelete.emit(task.title);
+       })
+       .catch((error) => {
+         console.log(error);
+       });
+   }
 
 }

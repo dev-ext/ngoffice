@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./edit.component.scss', '../todo.scss']
 })
 export class EditComponent implements OnInit {
-  @Input() key;
-
+  @Input() task: any;
   constructor() { }
 
   ngOnInit() {

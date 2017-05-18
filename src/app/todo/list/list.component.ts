@@ -7,8 +7,9 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./list.component.scss', '../todo.scss']
 })
 export class ListComponent implements OnInit {
-public listoptions;
+  public listoptions;
   public todolist: any;
+  public deleteMsg: string;
 
   constructor(
     private _taskservice: TaskService
@@ -18,6 +19,13 @@ public listoptions;
    this._taskservice.getAll().subscribe(tasks => {
      this.todolist = tasks;
    })
+  }
+
+  showDeleteMsg(data) {
+    this.deleteMsg = `${data.title}`;
+    setTimeout(() => {
+      this.deleteMsg = null;
+    })
   }
 
 }

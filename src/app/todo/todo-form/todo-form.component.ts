@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import shortid from 'shortid';
+import { ActivatedRoute, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from '../../services/task.service';
@@ -8,15 +10,17 @@ import { TaskService } from '../../services/task.service';
   templateUrl: './todo-form.component.html'
 })
 export class TodoFormComponent implements OnInit {
-  @Input() key: string;
+  @Input() task: any;
   @Output() onUpdate: EventEmitter<any> = new EventEmitter();
-
+  mode: string;
+  key: string;
   taskForm: FormGroup;
   message: string;
 
   constructor(
     public fb: FormBuilder,
     private _router: Router,
+    private _activeRoute: ActivatedRoute,
     private _taskService: TaskService
   ) { }
 
@@ -25,6 +29,18 @@ export class TodoFormComponent implements OnInit {
       title: ['', Validators.required],
       info: ['']
     });
+
+    this._activeRoute.queryParams.subscribe(query => {
+      this.mode = query.mode;
+      if (this.mode === 'add') {
+        this.key = shortid.generate();
+      }else {
+        this.task.subscribe(res => {
+          this.taskForm.setValue(res);
+        })
+      }
+    });
+
   }
 
   update(values, valid) {

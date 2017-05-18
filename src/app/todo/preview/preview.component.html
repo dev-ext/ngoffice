@@ -1,5 +1,5 @@
 <div class="todo-details__title">
-  <h2>Title</h2>
+  <h2>{{ (task | async)?.title }} </h2>
   <div class="todo-list__action">
       <button (click)="menuToggle =! menuToggle" class="ngf-btn-primary">
         <i class="fa fa-ellipsis-v"> </i>
@@ -17,9 +17,8 @@
       <strong>Due Date: </strong> 2/25/2017
     </li>
     <li>
-      <strong> Note </strong> <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cumque, provident illo
-      quisquam fugit ipsam, ex porro deleniti? Sit ipsam repellat totam accusantium incidunt esse repudiandae dolorem, alias
-      tempora ut.
+      <strong> Note </strong> <br> 
+      {{ (task | async)?.info }}
     </li>
   </ul>
 </div>

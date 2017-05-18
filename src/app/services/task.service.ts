@@ -3,16 +3,21 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class TaskService {
+  private _listName = 'tasks';
   private _tasks: FirebaseListObservable<any>;
 
   constructor(
    private  _afdb: AngularFireDatabase
   ) {
-   this._tasks  = this._afdb.list('/tasks');
+   this._tasks  = this._afdb.list(`/${this._listName}`);
   }
 
   getAll() {
     return  this._tasks;
+  }
+
+  getbyId(key) {
+    return this._afdb.object(`${this._listName}/${key}`);
   }
 
   update(id, data) {

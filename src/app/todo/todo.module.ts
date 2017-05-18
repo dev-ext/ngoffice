@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+import { SharedModule } from './../shared/shared.module';
 import { TodoRoutes } from './todo.route';
+
+import { TaskService } from '../services/task.service';
+
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { ListComponent } from './list/list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -15,8 +19,8 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
 
 @NgModule({
   imports: [
-    CommonModule,
-    TodoRoutes
+    TodoRoutes,
+    SharedModule
   ],
   declarations: [
     TodoHomeComponent,
@@ -30,8 +34,9 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
     TodoFormComponent,
     TodoListItemComponent
   ],
-  exports: [
-    TodoHomeComponent
+  exports: [],
+  providers: [
+    TaskService
   ]
 })
 export class TodoModule { }

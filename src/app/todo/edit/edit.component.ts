@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ngf-todo-edit',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.scss', '../todo.scss']
 })
 export class EditComponent implements OnInit {
+  @Input() key;
 
   constructor() { }
 

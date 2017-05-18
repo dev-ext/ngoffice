@@ -1,5 +1,5 @@
 <div class="padding todo-details">
-  <ngf-todo-edit *ngIf="mode === 'edit'"></ngf-todo-edit>
+  <ngf-todo-edit *ngIf="mode === 'edit'" [key]="id"></ngf-todo-edit>
   <ngf-todo-preview *ngIf="!mode"></ngf-todo-preview>
   <ngf-todo-create *ngIf="mode === 'add'"></ngf-todo-create>
 </div>

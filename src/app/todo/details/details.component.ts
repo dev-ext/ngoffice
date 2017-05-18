@@ -2,6 +2,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-todo-details',
@@ -13,10 +14,11 @@ export class DetailsComponent implements OnInit {
   public mode;
   private subParams;
   private subQuery: any;
-  id;
+  id: string;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _taskservice: TaskService
   ) { }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class DetailsComponent implements OnInit {
      if (environment.debug) {
        console.log('params', params);
      }
-     this.id = params;
+     this.id = params.id;
    });
 
    this.subQuery = this.route.queryParams.subscribe(query => {

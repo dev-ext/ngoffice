@@ -16,7 +16,12 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this._taskservice.getAll().subscribe(tasks => {
+    const query = {
+      orderByChild: 'done',
+      equalTo: false
+    };
+   this._taskservice.getQuery(query).subscribe(tasks => {
+     console.log(tasks);
      this.todolist = tasks;
    })
   }

@@ -5,6 +5,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class TaskService {
   private _listName = 'tasks';
   private _tasks: FirebaseListObservable<any>;
+  private _query: FirebaseListObservable<any>;
 
   constructor(
    private  _afdb: AngularFireDatabase
@@ -18,6 +19,12 @@ export class TaskService {
 
   getbyId(key) {
     return this._afdb.object(`${this._listName}/${key}`);
+  }
+
+  getQuery(query) {
+    return this._afdb.list(`${this._listName}`, {
+      query: query
+    });
   }
 
   update(id, data) {

@@ -35,4 +35,12 @@ export class TodoListItemComponent implements OnInit {
        });
    }
 
+   markasDone(key, status) {
+     const doneData = {
+       done: status
+     };
+
+     this._taskservice.update(key, doneData);
+   };
+
 }

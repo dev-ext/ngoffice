@@ -27,7 +27,8 @@ export class TodoFormComponent implements OnInit {
   ngOnInit() {
     this.taskForm = this.fb.group({
       title: ['', Validators.required],
-      info: ['']
+      info: [''],
+      done: false
     });
 
     this._activeRoute.queryParams.subscribe(query => {

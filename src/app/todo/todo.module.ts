@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
 import { TodoRoutes } from './todo.route';
 
-import { TaskService } from '../services/task.service';
+import { TaskService } from '../shared/services/task.service';
 
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { ListComponent } from './list/list.component';

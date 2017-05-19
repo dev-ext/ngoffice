@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { AuthRoutes } from './auth.routing';
 
 import { SharedModule } from './../shared/shared.module';
-import { AuthGuard } from '../services/auth.guard';
+import { AuthGuard } from '../shared/services/auth.guard';
 
 import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';

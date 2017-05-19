@@ -2,7 +2,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { TaskService } from '../../services/task.service';
+import { TaskService } from '../../shared/services/task.service';
 
 @Component({
   selector: 'ngf-todo-details',

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TaskService } from '../../services/task.service';
+import { TaskService } from '../../shared/services/task.service';
 
 @Component({
   selector: 'ngf-todo-form',

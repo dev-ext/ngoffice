@@ -1,5 +1,5 @@
 <div class="list__wrapper padding">
   <ul class="todo-list">
-    <ngf-todo-list-item></ngf-todo-list-item>
+    <ngf-todo-list-item [task]="task" *ngFor="let task of tasks" (onDelete)="showDeleteMsg($event)"></ngf-todo-list-item>
   </ul>
 </div>

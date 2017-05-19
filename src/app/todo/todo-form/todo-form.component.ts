@@ -12,7 +12,7 @@ import { TaskService } from '../../services/task.service';
 export class TodoFormComponent implements OnInit {
   @Input() task: any;
   @Output() onUpdate: EventEmitter<any> = new EventEmitter();
-  mode: string;
+  @Input() mode: string;
   key: string;
   taskForm: FormGroup;
   message: string;
@@ -30,25 +30,28 @@ export class TodoFormComponent implements OnInit {
       info: [''],
       done: false
     });
+    console.log(this.mode);
 
-    this._activeRoute.queryParams.subscribe(query => {
-      this.mode = query.mode;
-      if (this.mode === 'add') {
-        this.key = shortid.generate();
-      }else {
-        this.task.subscribe(res => {
-          this.taskForm.setValue(res);
-          this.key = res.$key;
-        })
-      }
-    });
+    if (this.mode === 'add') {
+      this.key = shortid.generate();
+    } else {
+      this.task.subscribe(res => {
+        this.taskForm.setValue(res);
+        this.key = res.$key;
+      })
+    }
 
   }
 
   update(values, valid) {
     console.log(values, this.key)
     if (valid) {
-      this._taskService.update(this.key, values);
+      this._taskService.update(this.key, values)
+        .then(() => {
+          if (this.mode === 'add') {
+            this._router.navigate([`todo/${this.key}`]);
+          }
+        });
       this.onUpdate.emit(this.key);
     }
   }

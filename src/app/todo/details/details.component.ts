@@ -5,7 +5,7 @@ import { environment } from '../../../environments/environment';
 import { TaskService } from '../../services/task.service';
 
 @Component({
-  selector: 'app-todo-details',
+  selector: 'ngf-todo-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss', '../todo.scss']
 })

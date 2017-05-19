@@ -37,6 +37,7 @@ export class TodoFormComponent implements OnInit {
       }else {
         this.task.subscribe(res => {
           this.taskForm.setValue(res);
+          this.key = res.$key;
         })
       }
     });
@@ -44,6 +45,7 @@ export class TodoFormComponent implements OnInit {
   }
 
   update(values, valid) {
+    console.log(values, this.key)
     if (valid) {
       this._taskService.update(this.key, values);
       this.onUpdate.emit(this.key);

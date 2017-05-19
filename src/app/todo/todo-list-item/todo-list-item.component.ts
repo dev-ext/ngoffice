@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TaskService } from '../../services/task.service';
+import { TaskService } from '../../shared/services/task.service';
 
 @Component({
   selector: 'ngf-todo-list-item',

@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from '../../shared/services/task.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'ngf-todo-form',
@@ -16,21 +17,32 @@ export class TodoFormComponent implements OnInit {
   key: string;
   taskForm: FormGroup;
   message: string;
+  public userid: string;
 
   constructor(
     public fb: FormBuilder,
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _taskService: TaskService
+    private _taskService: TaskService,
+    private _authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.taskForm = this.fb.group({
+     this.taskForm = this.fb.group({
       title: ['', Validators.required],
       info: [''],
-      done: false
+      done: false,
+      userid: [this.userid]
     });
-    console.log(this.mode);
+
+    this._authService.uid.subscribe(uid => {
+      this.taskForm.setValue({
+        title: '',
+        info: '',
+        done: false,
+        userid: [uid]
+      });
+    })
 
     if (this.mode === 'add') {
       this.key = shortid.generate();

@@ -64,18 +64,8 @@
   }
 
   &__actionlist {
-    position: absolute;
     top: 100%;
-    display: none;
-    width: 50px;
-    right: 0;
-    &.active {
-      display: block;
-    }
-    @media(min-width: map-get($layout, 'desktop')) {
-      display: block;
-      width: 100px;
-    }
+    width: 100px;
   }
 }
 

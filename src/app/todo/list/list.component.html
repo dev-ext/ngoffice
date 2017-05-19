@@ -1,8 +1,10 @@
-<div class="list__wrapper padding" (click)="listoptions = !listoptions">
+<div class="list__wrapper" (click)="listoptions = !listoptions">
   <div class="ngf-message" *ngIf="deleteMsg">
     {{deleteMsg}} successfully deleted
   </div>
   <div class="todo-list">
-    <ngf-todo-list-item [task]="task" *ngFor="let task of todolist" (onDelete)="showDeleteMsg($event)"></ngf-todo-list-item>
+    <ngf-todo-list-item [task]="task" *ngFor="let task of todolist"
+      (onDelete)="showDeleteMsg($event)">
+    </ngf-todo-list-item>
   </div>
 </div>

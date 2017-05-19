@@ -3,15 +3,16 @@
         {{ task?.title }}
     </div>
     <div class="todo-list__action">
-      <div class="todo-list__action-more">
-        <button (click)="viewMore($event)" class="ngf-btn-primary">
-          <i class="fa fa-ellipsis-v"></i>
-        </button>
-      </div>
       <div class="todo-list__actionlist" [ngClass]="{'active': listoptions}">
-        <button  class="ngf-btn-primary" routerLink="../{{task?.$key}}"><i class="fa fa-pencil"></i></button>
-        <button class="ngf-btn-primary" (click)="markasDone(task?.$key, true)"><i class="fa fa-check"></i></button>
-        <button class="ngf-btn-primary" (click)="delete(task)"><i class="fa fa-trash-o"></i></button>
+        <button  class="ngf-btn-primary" routerLink="../{{task?.$key}}">
+          <i class="fa fa-pencil"></i>
+        </button>
+        <button class="ngf-btn-primary" (click)="markasDone(task?.$key, true)">
+          <i class="fa fa-check"></i>
+        </button>
+        <button class="ngf-btn-primary" (click)="delete(task)">
+          <i class="fa fa-trash-o"></i>
+        </button>
       </div>
     </div>
 </div>

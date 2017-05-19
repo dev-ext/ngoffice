@@ -20,10 +20,6 @@ export class TodoListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-   viewMore(event: any) {
-    event.stopPropagation();
-    this.listoptions = !this.listoptions;
-  }
 
    delete(task) {
      this._taskservice.remove(task.$key)

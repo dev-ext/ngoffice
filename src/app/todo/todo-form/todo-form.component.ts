@@ -32,17 +32,7 @@ export class TodoFormComponent implements OnInit {
       title: ['', Validators.required],
       info: [''],
       done: false,
-      userid: [this.userid]
     });
-
-    this._authService.uid.subscribe(uid => {
-      this.taskForm.setValue({
-        title: '',
-        info: '',
-        done: false,
-        userid: [uid]
-      });
-    })
 
     if (this.mode === 'add') {
       this.key = shortid.generate();
@@ -56,7 +46,6 @@ export class TodoFormComponent implements OnInit {
   }
 
   update(values, valid) {
-    console.log(values, this.key)
     if (valid) {
       this._taskService.update(this.key, values)
         .then(() => {

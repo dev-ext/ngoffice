@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class TaskService {
@@ -8,9 +9,13 @@ export class TaskService {
   private _query: FirebaseListObservable<any>;
 
   constructor(
-   private  _afdb: AngularFireDatabase
+   private  _afdb: AngularFireDatabase,
+   private _auth: AuthService,
   ) {
-   this._tasks  = this._afdb.list(`/${this._listName}`);
+    this._auth.uid.subscribe(uid => {
+      this._listName = `tasks/${uid}`;
+      this._tasks  = this._afdb.list(`${this._listName}`);
+    })
   }
 
   getAll() {

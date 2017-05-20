@@ -21,7 +21,6 @@ export class ListComponent implements OnInit {
       equalTo: false
     };
    this._taskservice.getQuery(query).subscribe(tasks => {
-     console.log(tasks);
      this.todolist = tasks;
    })
   }

@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { UnAuthGuard } from '../shared/services/unauth.guard';
 import { SharedModule } from './../shared/shared.module';
 import { TodoRoutes } from './todo.route';
-
 import { TaskService } from '../shared/services/task.service';
-
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { ListComponent } from './list/list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -32,6 +31,7 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
   ],
   exports: [],
   providers: [
+    UnAuthGuard,
     TaskService
   ]
 })
